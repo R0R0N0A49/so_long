@@ -1,7 +1,7 @@
 # so_long
  - parsing :
      - map.ber ❌ (en cours)
-     - ligne min (3 pour 6 colone) ❌ ☑️
+     - ligne min (3 pour 6 colone) ❌ 
      - colone min (3 pour 6 ligne)
      - tout les ligne de la meme longeur
      - pas de ligne vide
@@ -19,3 +19,5 @@
      - perso
      - fruit
     (- pac gome)
+
+☑️ ❌
