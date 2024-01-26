@@ -16,7 +16,7 @@
      - mur ☑️
      - sol ☑️
      - portail de fin ❌
-     - perso ❌
+     - perso ☑️
      - fruit ☑️
      
     (- pac gome  ❌)
