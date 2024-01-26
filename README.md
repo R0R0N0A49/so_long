@@ -14,7 +14,7 @@
      - peut etre terminer ❌
   - tiles :
      - mur ☑️
-     - sol ❌
+     - sol ☑️
      - portail de fin ❌
      - perso ❌
      - fruit ☑️
