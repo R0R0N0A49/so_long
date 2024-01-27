@@ -6,11 +6,11 @@
      - tout les ligne de la meme longeur ☑️
      - pas de ligne vide ☑️
      - entourer de 1 ☑️
-     - 4 emplacement min ❌ (va avec les ligne)
-     - 1 pos de depart (pas plus) ❌
-     - 1 sortie (pas plus) ❌
-     - 1 objet min ❌
-     - pas de char inconue ❌
+     - 3 emplacement min ☑️ (va avec les ligne)
+     - 1 pos de depart (pas plus) ☑️
+     - 1 sortie (pas plus) ☑️
+     - 1 objet min ☑️
+     - pas de char inconue ☑️
      - peut etre terminer ❌
   - tiles :
      - mur ☑️
