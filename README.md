@@ -22,8 +22,8 @@
     (- pac gome  ❌)
 
  - so_long :
- 	 - afficher une fenetre					❌
- 	 - afficher une image					❌
+ 	 - afficher une fenetre					☑️
+ 	 - afficher une image					☑️
  	 - faire boujer une image				❌
  	 - afficher une map						❌
  	 - afficher la map comme il faut		❌
