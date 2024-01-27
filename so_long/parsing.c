@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 10:18:57 by trebours          #+#    #+#             */
-/*   Updated: 2024/01/27 15:10:32 by trebours         ###   ########.fr       */
+/*   Updated: 2024/01/27 15:56:03 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,5 +122,5 @@ void	verif_char(t_maps *parsing)
 			ft_error(parsing, "there is no Player or Exit");
 		k++;
 	}
-	verif_C(parsing);
+	verif_c(parsing);
 }

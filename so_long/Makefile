@@ -1,32 +1,49 @@
-NAME=so_long
-libft=libft.a
-CC=cc
-CFLAG= -Werror -Wall -Wextra -g
-SRCS= so_long.c parsing.c parsing_2.c init_tabs_map.c ft_printf/ft_printf_utils.c ft_printf/ft_printf.c
+NAME = so_long
+
+SRCS = so_long.c parsing.c parsing_2.c init_tabs_map.c\
+		ft_printf/ft_printf_utils.c ft_printf/ft_printf.c
+
 OBJS=$(SRCS:.c=.o)
-RM=rm -f
+
+RM=rm -rf
+
+CC= clang
+
+CFLAGS= -Wall -Wextra -Werror -I./MLX42/include -I./libft -g
+
+MLXFLAGS= -ldl -lX11 -lglfw -lm -lz -lbsd -lXext 
 
 CYAN='\033[1;36m'
 BLUE='\033[1;34m'
 GREEN='\033[6;32m'
-WHITE='\033[0;37m'
+WHITE='\033[0;m'
 
-.c.o:
-	@$(CC) $(CFLAG) -c $< -o $(<:.c=.o)
-all: $(NAME) $(libft)
-$(libft):
-	@make -C libft all
-$(NAME) : $(OBJS) $(libft)
-	@$(CC) $(CFLAG) -o $(NAME) $(OBJS) libft/libft.a
-	@echo ${GREEN}">-Successful compilation-<"${WHITE}
+all: libmlx $(NAME)
+
+libmlx:
+	@cmake ./MLX42 -B ./MLX42/build 
+	@make -C ./MLX42/build --no-print-directory -j4
+
+$(NAME) : $(OBJS)
+	@make --directory ./libft 
+	@make --directory ./MLX42/build
+	@$(CC) $(CFLAGS) $(OBJS) $(MLXFLAGS) ./libft/libft.a ./MLX42/build/libmlx42.a -o $@
+	@if [ $$? -eq 0 ]; then \
+		echo ${GREEN}"Compilation successful!"${GREEN}; \
+	fi
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@ 
+first:
+	@git clone https://github.com/codam-coding-college/MLX42.git
 clean:
-	@clear
 	@$(RM) $(OBJS)
 	@echo ${BLUE}">------Files clean-------<\n"${WHITE}
-fclean : clean
+fclean: clean
 	@$(RM) $(NAME)
-	@ make -C libft fclean
+	@make fclean --directory ./libft 
 	@echo ${CYAN}">-------Name clean-------<\n"${WHITE}
-re: fclean $(NAME)
+cleanall: fclean
+	@$(RM) MLX42
+re: fclean all
 
-.PHONY: clean fclean re all
+.PHONY: all clean fclean re cleanall first
