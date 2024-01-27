@@ -6,33 +6,11 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 08:40:39 by trebours          #+#    #+#             */
-/*   Updated: 2024/01/27 08:41:35 by trebours         ###   ########.fr       */
+/*   Updated: 2024/01/27 11:04:55 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void	ft_verif_ber(char *src)
-{
-	int	len_src;
-	int	i;
-
-	len_src = ft_strlen(src);
-	i = 0;
-	if (src[len_src - 1] != 'r')
-		i++;
-	if (src[len_src - 2] != 'e')
-		i++;
-	if (src[len_src - 3] != 'b')
-		i++;
-	if (src[len_src - 4] != '.')
-		i++;
-	if (i > 0)
-	{
-		ft_printf("Error\nthe file has the wrong format\n");
-		exit(1);
-	}
-}
 
 static int	ft_strlen_tabs(char *file)
 {
@@ -52,7 +30,7 @@ static int	ft_strlen_tabs(char *file)
 	return (len);
 }
 
-void	init_maps(t_maps *parsing)
+void	init_map(t_maps *parsing)
 {
 	int	fd;
 	int	i;

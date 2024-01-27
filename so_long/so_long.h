@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 09:17:33 by trebours          #+#    #+#             */
-/*   Updated: 2024/01/27 08:56:35 by trebours         ###   ########.fr       */
+/*   Updated: 2024/01/27 11:18:42 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ typedef struct s_maps
 }t_maps;
 
 void	ft_verif_ber(char *src);
-void	init_maps(t_maps *parsing);
+void	verif_C(t_maps *parsing);
+void	init_map(t_maps *parsing);
+void	verif_len(t_maps *parsing);
+void	verif_char(t_maps *parsing);
+void	verif_quote(t_maps *parsing);
+void	ft_error(t_maps *parsing, char *error);
+int		loop_verif_char(char *src, const char c, t_maps *parsing);
 
 #endif

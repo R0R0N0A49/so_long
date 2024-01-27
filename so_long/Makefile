@@ -2,7 +2,7 @@ NAME=so_long
 libft=libft.a
 CC=cc
 CFLAG= -Werror -Wall -Wextra -g
-SRCS= so_long.c init_tabs_map.c ft_printf/ft_printf_utils.c ft_printf/ft_printf.c
+SRCS= so_long.c parsing.c parsing_2.c init_tabs_map.c ft_printf/ft_printf_utils.c ft_printf/ft_printf.c
 OBJS=$(SRCS:.c=.o)
 RM=rm -f
 
