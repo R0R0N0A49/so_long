@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 10:18:57 by trebours          #+#    #+#             */
-/*   Updated: 2024/01/27 11:19:17 by trebours         ###   ########.fr       */
+/*   Updated: 2024/01/27 15:10:32 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ void	verif_len(t_maps *parsing)
 	int	i;
 
 	i = 0;
-	parsing->len_ligne_map = ft_strlen(parsing->map[i]);
+	parsing->len_line_map = ft_strlen(parsing->map[i]);
 	while (i < parsing->len_map)
 	{
-		if (ft_strlen(parsing->map[i]) != parsing->len_ligne_map)
+		if (ft_strlen(parsing->map[i]) != parsing->len_line_map)
 			ft_error(parsing, "Map incomplete");
 		i++;
 	}
-	if (parsing->len_ligne_map < 4 || parsing->len_map < 3)
-		ft_error(parsing, "Map incomplete");
+	if (parsing->len_line_map < 4 || parsing->len_map < 3)
+		ft_error(parsing, "Map incomplete, you need more line or column");
 }
 
 void	verif_quote(t_maps *parsing)
@@ -39,7 +39,7 @@ void	verif_quote(t_maps *parsing)
 		if (i == 0 || i == parsing->len_map - 1)
 		{
 			j = 0;
-			while (j < parsing->len_ligne_map - 2)
+			while (j < parsing->len_line_map - 1)
 			{
 				if (parsing->map[i][j] != '1')
 					ft_error(parsing, "Wall incomplete");
@@ -47,7 +47,7 @@ void	verif_quote(t_maps *parsing)
 			}
 		}
 		else if (parsing->map[i][0] != '1'
-			|| parsing->map[i][parsing->len_ligne_map - 2] != '1')
+			|| parsing->map[i][parsing->len_line_map - 2] != '1')
 			ft_error(parsing, "Wall incomplete");
 		i++;
 	}
@@ -75,18 +75,24 @@ void	ft_verif_ber(char *src)
 	}
 }
 
-int	loop_verif_char(char *src, const char c, t_maps *parsing)
+int	loop_verif_char(char *src, const char c, t_maps *parsing, int i)
 {
-	int	j;
-	int	tmp;
+	size_t	j;
+	int		tmp;
 
 	j = 1;
 	tmp = 0;
-	while (src[j] != '1')
+	while (src[j] != '\n')
 	{
 		if (src[j] == c)
 			tmp++;
-		if (src[j] != 'C' && src[j] != 'E' && src[j] != 'P' && src[j] != '0')
+		if (src[j] == 'P')
+		{
+			parsing->x = i;
+			parsing->y = j;
+		}
+		if (src[j] != 'C' && src[j] != 'E' && src[j] != 'P' && src[j] != '0'
+			&& src[j] != '1')
 			ft_error(parsing, "Char unknown");
 		j++;
 	}
@@ -107,7 +113,7 @@ void	verif_char(t_maps *parsing)
 		tmp = 0;
 		while (parsing->map[i])
 		{
-			tmp += loop_verif_char(parsing->map[i], str[k], parsing);
+			tmp += loop_verif_char(parsing->map[i], str[k], parsing, i);
 			i++;
 		}
 		if (tmp > 1)

@@ -3,30 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trebours <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:58:42 by trebours          #+#    #+#             */
-/*   Updated: 2023/11/14 14:58:44 by trebours         ###   ########.fr       */
+/*   Updated: 2024/01/27 13:56:54 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-int	ft_verif(char *result)
-{
-	int	i;
-
-	if (!result)
-		return (0);
-	i = 0;
-	while (result[i])
-	{
-		if (result[i] == '\n')
-			return (1);
-		i++;
-	}
-	return (0);
-}
 
 static void	ft_save(char *buf, char *result, int j)
 {

@@ -15,7 +15,7 @@ WHITE='\033[0;37m'
 	@$(CC) $(CFLAG) -c $< -o $(<:.c=.o)
 all: $(NAME) $(libft)
 $(libft):
-	@ make -C libft all
+	@make -C libft all
 $(NAME) : $(OBJS) $(libft)
 	@$(CC) $(CFLAG) -o $(NAME) $(OBJS) libft/libft.a
 	@echo ${GREEN}">-Successful compilation-<"${WHITE}

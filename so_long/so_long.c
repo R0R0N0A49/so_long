@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:39:41 by trebours          #+#    #+#             */
-/*   Updated: 2024/01/27 11:05:01 by trebours         ###   ########.fr       */
+/*   Updated: 2024/01/27 15:11:43 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,11 @@ int	main(int argc, char **argv)
 	}
 	ft_verif_ber(argv[1]);
 	parsing.file_maps = argv[1];
-	init_map(&parsing);
+	init_map(&parsing, 0);
 	verif_len(&parsing);
 	verif_quote(&parsing);
 	verif_char(&parsing);
+	ft_is_finished(&parsing);
 	ft_free_map(parsing.map);
 	return (0);
 }

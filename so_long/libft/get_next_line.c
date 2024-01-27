@@ -3,14 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: trebours <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 10:46:58 by trebours          #+#    #+#             */
-/*   Updated: 2023/11/23 11:43:52 by trebours         ###   ########.fr       */
+/*   Updated: 2024/01/27 13:56:58 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+int	ft_verif(char *result)
+{
+	int	i;
+
+	if (!result)
+		return (0);
+	i = 0;
+	while (result[i])
+	{
+		if (result[i] == '\n')
+			return (1);
+		i++;
+	}
+	return (0);
+}
 
 int	ft_strlen_gnl(char *src)
 {
