@@ -27,6 +27,7 @@ libmlx:
 $(NAME) : $(OBJS)
 	@make --directory ./libft 
 	@make --directory ./MLX42/build
+	@clear
 	@$(CC) $(CFLAGS) $(OBJS) $(MLXFLAGS) ./libft/libft.a ./MLX42/build/libmlx42.a -o $@
 	@if [ $$? -eq 0 ]; then \
 		echo ${GREEN}"Compilation successful!"${GREEN}; \
@@ -36,11 +37,14 @@ $(NAME) : $(OBJS)
 first:
 	@git clone https://github.com/codam-coding-college/MLX42.git
 clean:
+	@clear
 	@$(RM) $(OBJS)
 	@echo ${BLUE}">------Files clean-------<\n"${WHITE}
 fclean: clean
 	@$(RM) $(NAME)
 	@make fclean --directory ./libft 
+	@clear
+	@echo ${BLUE}">------Files clean-------<\n"${WHITE}
 	@echo ${CYAN}">-------Name clean-------<\n"${WHITE}
 cleanall: fclean
 	@$(RM) MLX42
