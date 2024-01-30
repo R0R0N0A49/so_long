@@ -29,7 +29,8 @@
  	 - afficher la map comme il faut : ☑️
       - passer les 1 en autre numeror corespondant aux tiles ☑️
       - placer les tiles au bonne endrois ☑️
-
+   - comter les colectible pris et afficher ❌
+   - conter le nombre de deplacement et efficher ❌
 ☑️ -> fait
 
 ❌ -> pas fait
