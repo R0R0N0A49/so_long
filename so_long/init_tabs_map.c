@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 08:40:39 by trebours          #+#    #+#             */
-/*   Updated: 2024/01/27 13:14:30 by trebours         ###   ########.fr       */
+/*   Updated: 2024/01/30 17:24:50 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,19 @@ static int	ft_strlen_tabs(char *file)
 	return (len);
 }
 
-void	init_map(t_maps *parsing, int len)
+int	init_map(t_maps *parsing, int len)
 {
 	int	fd;
 	int	i;
 
+	parsing->map = NULL;
 	if (len == 0)
 		parsing->len_map = ft_strlen_tabs(parsing->file_maps);
 	else
 		parsing->len_map = len;
 	fd = open(parsing->file_maps, O_APPEND | O_RDONLY);
 	if (fd < 0)
-		return ;
+		return (1);
 	parsing->map = malloc((parsing->len_map + 1) * sizeof(char *));
 	i = 0;
 	while (i < parsing->len_map)
@@ -52,4 +53,43 @@ void	init_map(t_maps *parsing, int len)
 	}
 	parsing->map[i] = NULL;
 	close(fd);
+	return (0);
+}
+
+char	*ft_malloc_line(t_maps *parsing, int i)
+{
+	char	*result;
+	size_t	j;
+
+	result = malloc(parsing->len_line_map * sizeof(char));
+	j = 0;
+	while (parsing->map[i][j] != '\n')
+	{
+		if (parsing->map[i][j] == '1')
+			result[j] = choice_char(parsing, i, j);
+		else
+			result[j] = parsing->map[i][j];
+		j++;
+	}
+	result[j] = 0;
+	return (result);
+}
+
+void	final_map(t_maps *parsing)
+{
+	char	**map_final;
+	int		i;
+
+	map_final = malloc((parsing->len_map + 1) * sizeof(char *));
+	if (!map_final)
+		ft_error(parsing, "error malloc");
+	i = 0;
+	while (i < parsing->len_map)
+	{
+		map_final[i] = ft_malloc_line(parsing, i);
+		i++;
+	}
+	map_final[i] = NULL;
+	ft_free_map(parsing->map);
+	parsing->map = map_final;
 }

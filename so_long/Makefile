@@ -1,7 +1,7 @@
 NAME = so_long
 
-SRCS = so_long.c parsing.c parsing_2.c init_tabs_map.c\
-		ft_printf/ft_printf_utils.c ft_printf/ft_printf.c
+SRCS = so_long.c parsing.c parsing_2.c init_tabs_map.c choice_char.c error_and_free.c\
+		load_txt_img.c ft_printf/ft_printf_utils.c ft_printf/ft_printf.c
 
 OBJS=$(SRCS:.c=.o)
 
