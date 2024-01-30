@@ -25,10 +25,10 @@
  	 - afficher une fenetre					☑️
  	 - afficher une image					☑️
  	 - faire bouger une image				❌
- 	 - afficher une map						❌
- 	 - afficher la map comme il faut : ❌
-      - passer les 1 en autre numeror corespondant aux tiles ❌
-      - placer les tiles au bonne endrois ❌
+ 	 - afficher une map						☑️
+ 	 - afficher la map comme il faut : ☑️
+      - passer les 1 en autre numeror corespondant aux tiles ☑️
+      - placer les tiles au bonne endrois ☑️
 
 ☑️ -> fait
 
