@@ -33,6 +33,7 @@
    . placer les tiles au bonne endrois ☑️
    - comter les colectible pris et afficher ❌
    - conter le nombre de deplacement et efficher ❌
+ 
 ☑️ -> fait
 
 ❌ -> pas fait
