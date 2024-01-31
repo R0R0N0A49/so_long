@@ -1,4 +1,6 @@
 # so_long
+
+ # mandatori part :
  - parsing :
      - map.ber 								☑️
      - ligne min (3 pour 6 colone)			☑️
