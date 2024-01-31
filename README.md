@@ -1,6 +1,6 @@
 # so_long
 
- # mandatori part :
+ # Mandatori part :
  - parsing :
      - map.ber 								☑️
      - ligne min (3 pour 6 colone)			☑️
@@ -35,7 +35,13 @@
    . placer les tiles au bonne endrois ☑️
    - comter les colectible pris et afficher ☑️
    - conter le nombre de deplacement et efficher ☑️
- 
+
+# Bonus
+
+  - fantome 	❌
+  - animation player 	❌
+  - afficher sur la map (deplacement et colectible) 	❌
+
 ☑️ -> fait
 
 ❌ -> pas fait
