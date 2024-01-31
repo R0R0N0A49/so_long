@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 16:32:10 by trebours          #+#    #+#             */
-/*   Updated: 2024/01/30 16:34:24 by trebours         ###   ########.fr       */
+/*   Updated: 2024/01/31 14:46:22 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,44 @@ void	init_texture(t_texture *load)
 	load->texture_o = mlx_load_png("../tile_so_long/corner_high_left.png");
 	load->texture_p = mlx_load_png("../tile_so_long/corner_high_right.png");
 	load->texture_0 = mlx_load_png("../tile_so_long/floor.png");
-	load->texture_P = mlx_load_png("../tile_so_long/mouse_left.png");
-	load->texture_E = mlx_load_png("../tile_so_long/banana.png");
-	load->texture_C = mlx_load_png("../tile_so_long/apple.png");
+	load->texture_1 = mlx_load_png("../tile_so_long/base_perso.png");
+	load->texture_2 = mlx_load_png("../tile_so_long/banana.png");
+	load->texture_3 = mlx_load_png("../tile_so_long/apple.png");
+	load->logo = mlx_load_png("../tile_so_long/logo.png");
 }
 
-void	init_image(mlx_t *mlx, t_image *load, t_texture *loaded)
+void	init_texture_32(t_texture *load)
 {
+	load->texture_a = mlx_load_png("../tile_so_long(32)/wall_vertical.png");
+	load->texture_b = mlx_load_png("../tile_so_long(32)/wall_horizontal.png");
+	load->texture_c = mlx_load_png("../tile_so_long(32)/wall_alone.png");
+	load->texture_d = mlx_load_png("../tile_so_long(32)/cross_wall.png");
+	load->texture_e = mlx_load_png("../tile_so_long(32)/t_botom.png");
+	load->texture_f = mlx_load_png("../tile_so_long(32)/t_high.png");
+	load->texture_g = mlx_load_png("../tile_so_long(32)/t_left.png");
+	load->texture_h = mlx_load_png("../tile_so_long(32)/t_right.png");
+	load->texture_j = mlx_load_png("../tile_so_long(32)/end_wall_botom.png");
+	load->texture_i = mlx_load_png("../tile_so_long(32)/end_wall_high.png");
+	load->texture_k = mlx_load_png("../tile_so_long(32)/end_wall_left.png");
+	load->texture_l = mlx_load_png("../tile_so_long(32)/end_wall_right.png");
+	load->texture_m = mlx_load_png("../tile_so_long(32)/corner_botom_left.png");
+	load->texture_n
+		= mlx_load_png("../tile_so_long(32)/corner_botom_right.png");
+	load->texture_o = mlx_load_png("../tile_so_long(32)/corner_high_left.png");
+	load->texture_p = mlx_load_png("../tile_so_long(32)/corner_high_right.png");
+	load->texture_0 = mlx_load_png("../tile_so_long(32)/floor.png");
+	load->texture_1 = mlx_load_png("../tile_so_long(32)/base_perso.png");
+	load->texture_2 = mlx_load_png("../tile_so_long(32)/banana.png");
+	load->texture_3 = mlx_load_png("../tile_so_long(32)/apple.png");
+	load->logo = mlx_load_png("../tile_so_long(32)/logo.png");
+}
+
+void	init_image(mlx_t *mlx, t_image *load, t_texture *loaded, int size)
+{
+	if (size == 64)
+		init_texture(loaded);
+	else
+		init_texture_32(loaded);
 	load->img_a = mlx_texture_to_image(&mlx[0], loaded->texture_a);
 	load->img_b = mlx_texture_to_image(&mlx[0], loaded->texture_b);
 	load->img_c = mlx_texture_to_image(&mlx[0], loaded->texture_c);
@@ -55,9 +86,9 @@ void	init_image(mlx_t *mlx, t_image *load, t_texture *loaded)
 	load->img_o = mlx_texture_to_image(&mlx[0], loaded->texture_o);
 	load->img_p = mlx_texture_to_image(&mlx[0], loaded->texture_p);
 	load->img_0 = mlx_texture_to_image(&mlx[0], loaded->texture_0);
-	load->img_E = mlx_texture_to_image(&mlx[0], loaded->texture_E);
-	load->img_C = mlx_texture_to_image(&mlx[0], loaded->texture_C);
-	load->img_P = mlx_texture_to_image(&mlx[0], loaded->texture_P);
+	load->img_1 = mlx_texture_to_image(&mlx[0], loaded->texture_1);
+	load->img_2 = mlx_texture_to_image(&mlx[0], loaded->texture_2);
+	load->img_3 = mlx_texture_to_image(&mlx[0], loaded->texture_3);
 }
 
 void	destroy_texture(t_texture *loaded)
@@ -79,13 +110,14 @@ void	destroy_texture(t_texture *loaded)
 	mlx_delete_texture(loaded->texture_o);
 	mlx_delete_texture(loaded->texture_p);
 	mlx_delete_texture(loaded->texture_0);
-	mlx_delete_texture(loaded->texture_E);
-	mlx_delete_texture(loaded->texture_C);
-	mlx_delete_texture(loaded->texture_P);
+	mlx_delete_texture(loaded->texture_1);
+	mlx_delete_texture(loaded->texture_2);
+	mlx_delete_texture(loaded->texture_3);
 }
 
-void	destroy_img(mlx_t *mlx, t_image *loaded)
+void	destroy_img(mlx_t *mlx, t_image *loaded, t_texture *loaded_texture)
 {
+	destroy_texture(loaded_texture);
 	mlx_delete_image(&mlx[0], loaded->img_a);
 	mlx_delete_image(&mlx[0], loaded->img_b);
 	mlx_delete_image(&mlx[0], loaded->img_c);
@@ -103,7 +135,7 @@ void	destroy_img(mlx_t *mlx, t_image *loaded)
 	mlx_delete_image(&mlx[0], loaded->img_o);
 	mlx_delete_image(&mlx[0], loaded->img_p);
 	mlx_delete_image(&mlx[0], loaded->img_0);
-	mlx_delete_image(&mlx[0], loaded->img_E);
-	mlx_delete_image(&mlx[0], loaded->img_C);
-	mlx_delete_image(&mlx[0], loaded->img_P);
+	mlx_delete_image(&mlx[0], loaded->img_1);
+	mlx_delete_image(&mlx[0], loaded->img_2);
+	mlx_delete_image(&mlx[0], loaded->img_3);
 }

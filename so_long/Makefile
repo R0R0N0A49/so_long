@@ -1,16 +1,10 @@
 NAME = so_long
-
 SRCS = so_long.c parsing.c parsing_2.c init_tabs_map.c choice_char.c error_and_free.c\
-		load_txt_img.c ft_printf/ft_printf_utils.c ft_printf/ft_printf.c
-
+		load_txt_img.c moving.c display_map.c ft_printf/ft_printf_utils.c ft_printf/ft_printf.c
 OBJS=$(SRCS:.c=.o)
-
 RM=rm -rf
-
 CC= clang
-
 CFLAGS= -Wall -Wextra -Werror -I./MLX42/include -I./libft -g
-
 MLXFLAGS= -ldl -lX11 -lglfw -lm -lz -lbsd -lXext 
 
 CYAN='\033[1;36m'
@@ -19,11 +13,9 @@ GREEN='\033[6;32m'
 WHITE='\033[0;m'
 
 all: libmlx $(NAME)
-
 libmlx:
 	@cmake ./MLX42 -B ./MLX42/build 
 	@make -C ./MLX42/build --no-print-directory -j4
-
 $(NAME) : $(OBJS)
 	@make --directory ./libft 
 	@make --directory ./MLX42/build
