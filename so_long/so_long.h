@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 09:17:33 by trebours          #+#    #+#             */
-/*   Updated: 2024/01/31 14:31:50 by trebours         ###   ########.fr       */
+/*   Updated: 2024/02/02 13:51:25 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,13 @@ typedef struct s_texture
 	mlx_texture_t	*texture_o;
 	mlx_texture_t	*texture_p;
 	mlx_texture_t	*texture_0;
-	mlx_texture_t	*texture_1;
 	mlx_texture_t	*texture_2;
 	mlx_texture_t	*texture_3;
+	mlx_texture_t	*texture_base;
+	mlx_texture_t	*texture_right;
+	mlx_texture_t	*texture_left;
+	mlx_texture_t	*texture_botom;
+	mlx_texture_t	*texture_high;
 	mlx_texture_t	*logo;
 }t_texture;
 
@@ -61,16 +65,20 @@ typedef struct s_image
 	mlx_image_t	*img_o;
 	mlx_image_t	*img_p;
 	mlx_image_t	*img_0;
-	mlx_image_t	*img_1;
 	mlx_image_t	*img_2;
 	mlx_image_t	*img_3;
+	mlx_image_t	*base;
+	mlx_image_t	*right;
+	mlx_image_t	*left;
+	mlx_image_t	*botom;
+	mlx_image_t	*high;
 }t_image;
 
 typedef struct s_maps
 {
 	mlx_t		*mlx;
-	t_image		loaded_img;
-	t_texture	loaded_tex;
+	t_image		img;
+	t_texture	tex;
 	char		**map;
 	size_t		len_line_map;
 	char		*file_maps;
@@ -96,15 +104,17 @@ void	verif_char(t_maps *parsing);
 void	verif_quote(t_maps *parsing);
 void	init_texture(t_texture *load);
 void	ft_is_finished(t_maps *parsing);
+int32_t	victory(mlx_t mlx, t_maps *map);
 void	destroy_texture(t_texture *loaded);
 int		init_map(t_maps *parsing, int len);
+void	display_mouv(t_maps *map, int mouv);
 void	ft_error(t_maps *parsing, char *error);
 char	*ft_malloc_line(t_maps *parsing, int i);
 char	choice_char(t_maps *parsing, int i, size_t j);
-void	display_a_l(char c, t_image *loaded_img, int *i, int size);
-void	display_o_3(char c, t_image *loaded_img, int *i, int size);
+void	destroy_img(t_image *loaded, t_texture *texture);
+void	display_a_l(char c, t_image *img, int *i, int size);
+void	display_o_3(char c, t_image *img, int *i, int size);
+void	init_image(t_image *load, t_texture *loaded, int size);
 int		loop_verif_char(char *src, const char c, t_maps *parsing, int i);
-void	init_image(mlx_t *mlx, t_image *load, t_texture *loaded, int size);
-void	destroy_img(mlx_t *mlx, t_image *loaded, t_texture *loaded_texture);
 
 #endif

@@ -6,26 +6,30 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:39:41 by trebours          #+#    #+#             */
-/*   Updated: 2024/01/31 15:02:50 by trebours         ###   ########.fr       */
+/*   Updated: 2024/02/02 13:56:52 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int32_t	victory(void)
+int32_t	victory(mlx_t mlx, t_maps *map)
 {
-	mlx_t			*mlx;
 	mlx_texture_t	*texture_a;
 	mlx_image_t		*img_a;
 
-	mlx = mlx_init(640, 320, "victory", false);
-	texture_a = mlx_load_png("../tile_so_long/win.png");
-	img_a = mlx_texture_to_image(mlx, texture_a);
-	mlx_image_to_window(mlx, img_a, (0), (0));
-	mlx_loop(mlx);
+	texture_a = mlx_load_png("tile_so_long/win.png");
+	img_a = mlx_texture_to_image(&mlx, texture_a);
+	mlx_delete_image(map->mlx, map->img.base);
+	mlx_delete_image(map->mlx, map->img.left);
+	mlx_delete_image(map->mlx, map->img.right);
+	mlx_delete_image(map->mlx, map->img.botom);
+	mlx_delete_image(map->mlx, map->img.high);
+	mlx_image_to_window(&mlx, img_a, 0, 0);
+	mlx_set_window_size(&mlx, 640, 320);
+	ft_printf("\n\nPress \"esc\" for quit\n\n");
+	mlx_loop(&mlx);
+	mlx_delete_image(&mlx, img_a);
 	mlx_delete_texture(texture_a);
-	mlx_delete_image(&mlx[0], img_a);
-	mlx_terminate(mlx);
 	return (EXIT_SUCCESS);
 }
 
@@ -51,38 +55,44 @@ void	key_press(mlx_key_data_t keydata, void *param)
 		left(map);
 }
 
-int32_t	so_long(t_maps *map, int size)
+void	save_struct(t_maps *map)
 {
-	int			i[2];
 	t_texture	loaded_texture;
 	t_image		loaded_img;
 
-	ft_printf("Colectible = %d\n", map->nmb_obj);
-	map->mlx = mlx_init((map->len_line_map - 1) * size,
-			(map->len_map) * size, "so_long", false);
+	map->mlx = mlx_init((map->len_line_map - 1) * map->size,
+			(map->len_map) * map->size, "so_long", false);
 	loaded_img.mlx = map->mlx;
-	i[0] = 0;
-	init_image(map->mlx, &loaded_img, &loaded_texture, size);
-	mlx_set_icon(map->mlx, loaded_texture.logo);
-	map->loaded_img = loaded_img;
-	map->loaded_tex = loaded_texture;
+	init_image(&loaded_img, &loaded_texture, map->size);
+	map->img = loaded_img;
+	map->tex = loaded_texture;
 	map->nmb_move = 0;
+}
+
+int32_t	so_long(t_maps *map, int size)
+{
+	int			i[2];
+
+	ft_printf("Colectible = %d\n", map->nmb_obj);
+	map->size = size;
+	save_struct(map);
+	mlx_set_icon(map->mlx, map->tex.logo);
 	mlx_set_window_title(map->mlx, "Puck Man");
+	i[0] = 0;
 	while (map->map[i[0]])
 	{
 		i[1] = 0;
 		while (map->map[i[0]][i[1]])
 		{
-			display_a_l(map->map[i[0]][i[1]], &loaded_img, i, size);
-			display_o_3(map->map[i[0]][i[1]], &loaded_img, i, size);
+			display_a_l(map->map[i[0]][i[1]], &map->img, i, size);
+			display_o_3(map->map[i[0]][i[1]], &map->img, i, size);
 			i[1]++;
 		}
 		i[0]++;
 	}
-	map->size = size;
 	mlx_key_hook(map->mlx, key_press, map);
 	mlx_loop(map->mlx);
-	destroy_img(map->mlx, &loaded_img, &loaded_texture);
+	destroy_img(&map->img, &map->tex);
 	mlx_terminate(map->mlx);
 	return (EXIT_SUCCESS);
 }
@@ -112,4 +122,3 @@ int	main(int argc, char **argv)
 	ft_free_map(parsing.map);
 	return (0);
 }
-	/*victory();*/

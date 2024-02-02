@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 10:56:35 by trebours          #+#    #+#             */
-/*   Updated: 2024/01/27 15:10:13 by trebours         ###   ########.fr       */
+/*   Updated: 2024/02/02 10:46:40 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	verif_c(t_maps *parsing)
 	parsing->nmb_obj = tmp;
 }
 
-void	ft_verif_path(t_maps *path, int x, int y)
+static void	ft_verif_path(t_maps *path, int x, int y)
 {
 	if (path->map[x][y] != '1' && path->map[x][y] != 'T')
 		path->map[x][y] = 'T';

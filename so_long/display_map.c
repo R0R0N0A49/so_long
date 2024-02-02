@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 14:30:39 by trebours          #+#    #+#             */
-/*   Updated: 2024/01/31 14:42:30 by trebours         ###   ########.fr       */
+/*   Updated: 2024/02/02 13:50:46 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,37 @@ void	display_o_3(char c, t_image *loaded_img, int *i, int size)
 	else if (c == '0' || c == 'P' || c == 'E' || c == 'C')
 		mlx_image_to_window(&mlx[0], loaded_img->img_0, x, (i[0] * size));
 	if (c == 'P')
-		mlx_image_to_window(&mlx[0], loaded_img->img_1, x, (i[0] * size));
+		mlx_image_to_window(&mlx[0], loaded_img->base, x, (i[0] * size));
 	else if (c == 'E')
 		mlx_image_to_window(&mlx[0], loaded_img->img_2, x, (i[0] * size));
 	else if (c == 'C')
 		mlx_image_to_window(&mlx[0], loaded_img->img_3, x, (i[0] * size));
+}
+
+void	display_mouv(t_maps *map, int mouv)
+{
+	if (mouv == 1)
+	{
+		map->img.left = mlx_texture_to_image(map->mlx, map->tex.texture_left);
+		mlx_image_to_window(map->mlx, map->img.left,
+			(map->y * map->size), (map->x * map->size));
+	}
+	if (mouv == 2)
+	{
+		map->img.right = mlx_texture_to_image(map->mlx, map->tex.texture_right);
+		mlx_image_to_window(map->mlx, map->img.right,
+			(map->y * map->size), (map->x * map->size));
+	}
+	if (mouv == 3)
+	{
+		map->img.botom = mlx_texture_to_image(map->mlx, map->tex.texture_botom);
+		mlx_image_to_window(map->mlx, map->img.botom,
+			(map->y * map->size), (map->x * map->size));
+	}
+	if (mouv == 4)
+	{
+		map->img.high = mlx_texture_to_image(map->mlx, map->tex.texture_high);
+		mlx_image_to_window(map->mlx, map->img.high,
+			(map->y * map->size), (map->x * map->size));
+	}
 }

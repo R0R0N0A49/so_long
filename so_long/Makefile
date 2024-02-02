@@ -1,5 +1,5 @@
 NAME = so_long
-SRCS = so_long.c parsing.c parsing_2.c init_tabs_map.c choice_char.c error_and_free.c\
+SRCS = so_long.c parsing.c parsing_2.c init_tabs_map.c choice_char.c error_and_free.c destroy_img_tex.c\
 		load_txt_img.c moving.c display_map.c ft_printf/ft_printf_utils.c ft_printf/ft_printf.c
 OBJS=$(SRCS:.c=.o)
 RM=rm -rf
@@ -28,6 +28,7 @@ $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@ 
 first:
 	@git clone https://github.com/codam-coding-college/MLX42.git
+	@git clone https://github.com/R0R0N0A49/libft.git
 clean:
 	@clear
 	@$(RM) $(OBJS)
@@ -40,6 +41,7 @@ fclean: clean
 	@echo ${CYAN}">-------Name clean-------<\n"${WHITE}
 cleanall: fclean
 	@$(RM) MLX42
+	@$(RM) libft
 re: fclean all
 
 .PHONY: all clean fclean re cleanall first
