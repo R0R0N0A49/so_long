@@ -19,7 +19,7 @@
      - sol 									☑️
      - perso 								☑️
      - fruit 								☑️
-     - portail de fin 						❌
+     - portail de fin 						☑️
      
     (- pac gome  ❌)
 
