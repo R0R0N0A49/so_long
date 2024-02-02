@@ -40,6 +40,8 @@
 
   - fantome 	❌
   - animation player 	❌
+  - cree sprite nmb ❌
+  - metre musique ❌
   - afficher sur la map (deplacement et colectible) 	❌
 
 ☑️ -> fait
