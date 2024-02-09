@@ -1,49 +1,16 @@
-# so_long
+# Projet so_long
+realiser a 42_Angouleme
 
- # Mandatori part :
- - parsing :
-     - map.ber 								☑️
-     - ligne min (3 pour 6 colone)			☑️
-     - colone min (3 pour 6 ligne)			☑️
-     - tout les ligne de la meme longeur	☑️
-     - pas de ligne vide 					☑️
-     - entourer de 1 						☑️
-     - 3 emplacement min 					☑️
-     - 1 pos de depart (pas plus) 			☑️
-     - 1 sortie (pas plus) 					☑️
-     - 1 objet min 							☑️
-     - pas de char inconue 					☑️
-     - peut etre terminer 					☑️
-  - tiles :
-     - mur 									☑️
-     - sol 									☑️
-     - perso 								☑️
-     - fruit 								☑️
-     - portail de fin 						☑️
-     
-    (- pac gome  ❌)
+#pour le telecharger :
+ - https://github.com/R0R0N0A49/so_long.git
+ - https://drive.google.com/drive/folders/1qOMKi_4CQb3IF_HhrlMU_n8KQNKTZBOF?usp=drive_link
+puis mettre le dossier music (pris sur google_drive) dans le dossier so_long.
 
- - so_long :
- 	 - afficher une fenetre					☑️
- 	 - afficher une image					☑️
- 	 - faire bouger une image				☑️
- 	 - afficher une map						☑️
- 	 - afficher la map comme il faut : ☑️
+#pour le lancer :
+ - ouvrir un terminal dans le dossier so_long
+ - executer la commande "make first"
+ - puis "make"
+ - puis "./so_long map/<nom_de_map.ber>"
 
-     . passer les 1 en autre numeror corespondant aux tiles ☑️
-
-   . placer les tiles au bonne endrois ☑️
-   - comter les colectible pris et afficher ☑️
-   - conter le nombre de deplacement et efficher ☑️
-
-# Bonus
-
-  - fantome 	❌
-  - animation player 	☑️
-  - cree sprite nmb ❌
-  - metre musique ❌
-  - afficher sur la map (deplacement et colectible) 	❌
-
-☑️ -> fait
-
-❌ -> pas fait
+pour cree une map :
+ - cree un fichier ".ber" dans le dossier "map"
