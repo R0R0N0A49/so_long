@@ -25,3 +25,4 @@ puis mettre le dossier music (pris sur google_drive) dans le dossier so_long.
     - il ne doit pas y avoir de ligne plus grande que les autre (si la map est cree sur Visual studio, il doit y avoir un retour a le ligne a la fin)
     - il doit y avoir SEULEMENT 1 position de depart et 1 sortie
     - il doit y avoir aux moin 1 objet a colecter
+
