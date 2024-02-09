@@ -6,15 +6,16 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 09:17:33 by trebours          #+#    #+#             */
-/*   Updated: 2024/02/02 13:51:25 by trebours         ###   ########.fr       */
+/*   Updated: 2024/02/09 10:44:48 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 # include "libft/libft.h"
-# include "ft_printf/ft_printf.h"
+# include "libft/ft_printf.h"
 # include "MLX42/include/MLX42/MLX42.h"
+# include <time.h>
 
 typedef struct s_texture
 {
@@ -37,12 +38,26 @@ typedef struct s_texture
 	mlx_texture_t	*texture_0;
 	mlx_texture_t	*texture_2;
 	mlx_texture_t	*texture_3;
+	mlx_texture_t	*texture_4;
+	mlx_texture_t	*texture_5;
+	mlx_texture_t	*texture_6;
+	mlx_texture_t	*ghost;
 	mlx_texture_t	*texture_base;
 	mlx_texture_t	*texture_right;
 	mlx_texture_t	*texture_left;
 	mlx_texture_t	*texture_botom;
 	mlx_texture_t	*texture_high;
 	mlx_texture_t	*logo;
+	mlx_texture_t	*_0;
+	mlx_texture_t	*_1;
+	mlx_texture_t	*_2;
+	mlx_texture_t	*_3;
+	mlx_texture_t	*_4;
+	mlx_texture_t	*_5;
+	mlx_texture_t	*_6;
+	mlx_texture_t	*_7;
+	mlx_texture_t	*_8;
+	mlx_texture_t	*_9;
 }t_texture;
 
 typedef struct s_image
@@ -67,11 +82,25 @@ typedef struct s_image
 	mlx_image_t	*img_0;
 	mlx_image_t	*img_2;
 	mlx_image_t	*img_3;
+	mlx_image_t	*img_4;
+	mlx_image_t	*img_5;
+	mlx_image_t	*img_6;
+	mlx_image_t	*ghost;
 	mlx_image_t	*base;
 	mlx_image_t	*right;
 	mlx_image_t	*left;
 	mlx_image_t	*botom;
 	mlx_image_t	*high;
+	mlx_image_t	*_0;
+	mlx_image_t	*_1;
+	mlx_image_t	*_2;
+	mlx_image_t	*_3;
+	mlx_image_t	*_4;
+	mlx_image_t	*_5;
+	mlx_image_t	*_6;
+	mlx_image_t	*_7;
+	mlx_image_t	*_8;
+	mlx_image_t	*_9;
 }t_image;
 
 typedef struct s_maps
@@ -79,42 +108,58 @@ typedef struct s_maps
 	mlx_t		*mlx;
 	t_image		img;
 	t_texture	tex;
-	char		**map;
 	size_t		len_line_map;
+	char		**map;
+	int			finish;
 	char		*file_maps;
+	char		*title;
 	int			len_map;
 	int			nmb_obj;
+	int			save_nmb_obj;
 	int			nmb_move;
 	int			x;
 	int			y;
 	int			size;
+	int			nmb_ghost;
+	int			*ghost_x;
+	int			*ghost_y;
 }t_maps;
 
 void	left(t_maps *map);
 void	high(t_maps *map);
+int32_t	death(t_maps *map);
 void	right(t_maps *map);
 void	botom(t_maps *map);
 void	ft_error_mlx(void);
 void	ft_verif_ber(char *src);
 void	ft_free_map(char **map);
+void	destroy_img(t_maps *map);
 void	verif_c(t_maps *parsing);
+void	display_obj(t_maps *map);
+void	ft_ghost_move(void *param);
+void	display_ghost(t_maps *map);
 void	verif_len(t_maps *parsing);
 void	final_map(t_maps *parsing);
+void	display_number(t_maps *map);
+void	destroy_number(t_maps *map);
 void	verif_char(t_maps *parsing);
+void	destroy_texture(t_maps *map);
 void	verif_quote(t_maps *parsing);
 void	init_texture(t_texture *load);
+void	display_last_line(t_maps *map);
 void	ft_is_finished(t_maps *parsing);
 int32_t	victory(mlx_t mlx, t_maps *map);
-void	destroy_texture(t_texture *loaded);
+void	init_texture_32(t_texture *load);
 int		init_map(t_maps *parsing, int len);
 void	display_mouv(t_maps *map, int mouv);
 void	ft_error(t_maps *parsing, char *error);
 char	*ft_malloc_line(t_maps *parsing, int i);
+void	save_ghost(t_maps *parsing, int x, int y);
 char	choice_char(t_maps *parsing, int i, size_t j);
-void	destroy_img(t_image *loaded, t_texture *texture);
-void	display_a_l(char c, t_image *img, int *i, int size);
-void	display_o_3(char c, t_image *img, int *i, int size);
+void	display_a_l(char c, t_maps *map, int *i, int size);
+void	display_o_3(char c, t_maps *map, int *i, int size);
 void	init_image(t_image *load, t_texture *loaded, int size);
+void	init_number(t_image *image, t_texture *texture, int secu);
 int		loop_verif_char(char *src, const char c, t_maps *parsing, int i);
 
 #endif

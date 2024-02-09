@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 08:40:39 by trebours          #+#    #+#             */
-/*   Updated: 2024/01/30 17:24:50 by trebours         ###   ########.fr       */
+/*   Updated: 2024/02/08 11:07:36 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,13 @@ int	init_map(t_maps *parsing, int len)
 	return (0);
 }
 
+static char	ghost(void)
+{
+	if ((rand() % 100) < 2)
+		return ('F');
+	return ('0');
+}
+
 char	*ft_malloc_line(t_maps *parsing, int i)
 {
 	char	*result;
@@ -67,8 +74,12 @@ char	*ft_malloc_line(t_maps *parsing, int i)
 	{
 		if (parsing->map[i][j] == '1')
 			result[j] = choice_char(parsing, i, j);
+		else if (parsing->map[i][j] == '0')
+			result[j] = ghost();
 		else
 			result[j] = parsing->map[i][j];
+		if (result[j] == 'F')
+			save_ghost(parsing, i, j);
 		j++;
 	}
 	result[j] = 0;
