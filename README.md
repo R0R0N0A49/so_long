@@ -8,10 +8,10 @@ realiser a 42_Angouleme
 puis mettre le dossier music (pris sur google_drive) dans le dossier so_long.
 
 # pour le lancer :
- - ouvrir un terminal dans le dossier so_long
- - executer la commande "make first"
- - puis "make"
- - puis "./so_long map/< nom_de_map.ber >" (si toute les etape au dessus on deja ete faite pas besoin de les refaire pour relancer)
+	(ouvrir un terminal dans le dossier so_long)
+	make first
+	make
+	./so_long map/< nom_de_map.ber >
 
 # pour cree une map :
  - cree un fichier ".ber" dans le dossier "map"
