@@ -31,6 +31,11 @@
 
 ## les touche :
 
+| :--------------- |:---------------:| -----:|
+| droite  |   D        |  Fleche droite |
+| Aligné à gauche  | est             |   Aligné à droite |
+| Aligné à gauche  | centré          |    Aligné à droite |
+
 
   - droit : D ou fleche droite
   - gauche : A ou fleche gauche
