@@ -11,8 +11,10 @@
 (ouvrir un terminal dans le dossier so_long)
  
 	make first
+
  
 	make
+
  
 	./so_long map/< nom_de_map.ber >
 
