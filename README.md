@@ -42,15 +42,16 @@
 ## pour creer une map :
 
 
- **- cree un fichier ".ber" dans le dossier "map"**
- **- cree une map avec les caracteres suivants :**
+**- cree un fichier ".ber" dans le dossier "map"**
+**- cree une map avec les caracteres suivants :**
  
    - 1 est un mur
    - 0 est un endroit ou le joueur peut ce deplacer
    - E est la sortie
    - P est la position de depart du joueur
    - C est un objet que le joueur doit ramaser
- **- avec les criteres suivants**
+
+**- avec les criteres suivants**
  
    - la map doit etre entourer de mur
    - il ne doit pas y avoir de ligne plus grande que les autre (si la map est cree sur Visual studio, il doit y avoir un retour a le ligne a la fin)
