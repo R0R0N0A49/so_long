@@ -1,7 +1,9 @@
 # Projet so_long
 
+
+
 ## Installation :
-### pour le telecharger :
+#### pour le telecharger :
 
 	git clone https://github.com/R0R0N0A49/so_long.git
  et prendre les musique dans :
