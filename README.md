@@ -1,5 +1,4 @@
 # Projet so_long
-realiser a 42_Angouleme
 
 # pour le telecharger :
 	git clone https://github.com/R0R0N0A49/so_long.git
@@ -34,3 +33,6 @@ realiser a 42_Angouleme
     - il doit y avoir SEULEMENT 1 position de depart et 1 sortie
     - il doit y avoir aux moin 1 objet a colecter
 
+
+
+realiser a 42_Angouleme
