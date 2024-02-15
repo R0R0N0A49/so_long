@@ -31,11 +31,13 @@
 
 ## les touche :
 
-| Action  | touche_1          | touche_2 |
-| :--------------- |:---------------:| -----:|
-| Aligné à gauche  |   ce texte        |  Aligné à droite |
-| Aligné à gauche  | est             |   Aligné à droite |
-| Aligné à gauche  | centré          |    Aligné à droite |
+| Action  | touche_1 | touche_2       |
+| :-----: |:--------:| :-------------:|
+| Droite  |   D      |  Fleche droite |
+| Gauche  |   A      |  Fleche gauche |
+| Haut    |   W      |  Fleche haute  |
+| Bas     |   S      |  Fleche basse  |
+| Quitter |   Q      |  ESC           |
 
 
   - droit : D ou fleche droite
