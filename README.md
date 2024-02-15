@@ -33,6 +33,7 @@
 
 | Action  | touche_1 | touche_2       |
 | :-----: |:--------:| :-------------:|
+|         |          |                |
 | Droite  |   D      |  Fleche droite |
 | Gauche  |   A      |  Fleche gauche |
 | Haut    |   W      |  Fleche haute  |
@@ -43,6 +44,7 @@
 
 
 **- cree un fichier ".ber" dans le dossier "map"**
+
 **- cree une map avec les caracteres suivants :**
  
    - 1 est un mur
@@ -61,4 +63,4 @@
 
 
 
-**realiser a 42_Angouleme**
+## realiser a 42_Angouleme
