@@ -20,7 +20,7 @@
   - haut : W ou fleche haut
   - fermer la fenetre : Q ou ESQ
 
-# pour cree une map :
+# pour creer une map :
  - cree un fichier ".ber" dans le dossier "map"
  - cree une map avec les critere suivant :
     - 1 est un mur
