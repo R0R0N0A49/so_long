@@ -39,14 +39,6 @@
 | Bas     |   S      |  Fleche basse  |
 | Quitter |   Q      |  ESC           |
 
-
-  - droit : D ou fleche droite
-  - gauche : A ou fleche gauche
-  - bas : S ou fleche bas
-  - haut : W ou fleche haut
-  - fermer la fenetre : Q ou ESC
-
-
 ## pour creer une map :
 
 
