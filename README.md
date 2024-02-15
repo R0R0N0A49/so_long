@@ -9,13 +9,10 @@
 
 # pour le lancer :
 (ouvrir un terminal dans le dossier so_long)
+en premier :
  
 	make first
- 
-
 	make
- 
-
 	./so_long map/< nom_de_map.ber >
 
 # les touche :
