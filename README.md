@@ -14,7 +14,7 @@
 
 pour le tout premier lancement :
  
-	make first && make && ./so_long map/< nom_de_map >
+	make first && make && ./so_long map/<strong>< nom_de_map ><strong>
 
 pour les autre fois :
 
