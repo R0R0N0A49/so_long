@@ -14,6 +14,7 @@
    #### pour le lancer :
 
    > (ouvrir un terminal dans le dossier so_long)
+
    > (remplacer "nom_de_map" par une map presente dans le dossier map)
 
 
