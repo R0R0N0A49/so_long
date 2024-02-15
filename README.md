@@ -1,6 +1,6 @@
 # Projet so_long
 
-# pour le telecharger :
+****pour le telecharger :****
 	git clone https://github.com/R0R0N0A49/so_long.git
  et prendre les musique dans :
  
@@ -12,11 +12,11 @@
 
 (ramplacer "nom_de_map" par une map presente dans le dossier map)
 
-pour le tout premier **lancement** :
+**pour le tout premier lancement :**
  
-	make first && make && ./so_long map/**< nom_de_map >**
+	make first && make && ./so_long map/< nom_de_map >
 
-pour les autre fois :
+**pour les autre fois :**
 
 	./so_long map/< nom_de_map >
 
