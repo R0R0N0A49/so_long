@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 09:17:33 by trebours          #+#    #+#             */
-/*   Updated: 2024/02/09 10:44:48 by trebours         ###   ########.fr       */
+/*   Updated: 2024/02/14 13:52:17 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ typedef struct s_image
 	mlx_image_t	*_7;
 	mlx_image_t	*_8;
 	mlx_image_t	*_9;
+	mlx_image_t	*move;
 }t_image;
 
 typedef struct s_maps
@@ -123,6 +124,9 @@ typedef struct s_maps
 	int			nmb_ghost;
 	int			*ghost_x;
 	int			*ghost_y;
+	int			move;
+	int			is_anime;
+	int			is_moving;
 }t_maps;
 
 void	left(t_maps *map);
