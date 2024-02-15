@@ -12,7 +12,7 @@
 
 (ramplacer "nom_de_map" par une map presente dans le dossier map)
 
-pour le tout premier lancement :
+pour le tout premier **lancement** :
  
 	make first && make && ./so_long map/**< nom_de_map >**
 
