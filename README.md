@@ -1,4 +1,4 @@
-[color=#26B260] Projet so_long [/color]
+<span style="color: #26B260"> Projet so_long </span>
 
 
 
