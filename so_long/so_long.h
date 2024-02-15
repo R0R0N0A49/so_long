@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 09:17:33 by trebours          #+#    #+#             */
-/*   Updated: 2024/02/14 13:52:17 by trebours         ###   ########.fr       */
+/*   Updated: 2024/02/15 16:25:06 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,6 @@ typedef struct s_maps
 	int			*ghost_y;
 	int			move;
 	int			is_anime;
-	int			is_moving;
 }t_maps;
 
 void	left(t_maps *map);
@@ -151,6 +150,7 @@ void	destroy_texture(t_maps *map);
 void	verif_quote(t_maps *parsing);
 void	init_texture(t_texture *load);
 void	display_last_line(t_maps *map);
+int32_t	so_long(t_maps *map, int size);
 void	ft_is_finished(t_maps *parsing);
 int32_t	victory(mlx_t mlx, t_maps *map);
 void	init_texture_32(t_texture *load);

@@ -1,5 +1,5 @@
 NAME = so_long
-SRCS = so_long.c parsing.c parsing_2.c init_tabs_map.c choice_char.c error_and_free.c destroy_img_tex.c dead_and_win.c\
+SRCS = main.c so_long.c parsing.c parsing_2.c init_tabs_map.c choice_char.c error_and_free.c destroy_img_tex.c dead_and_win.c\
 		load_txt_img.c moving.c display_map.c ghost.c display_number.c
 OBJS=$(SRCS:.c=.o)
 RM=rm -rf

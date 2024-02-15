@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 17:17:21 by trebours          #+#    #+#             */
-/*   Updated: 2024/02/09 10:42:30 by trebours         ###   ########.fr       */
+/*   Updated: 2024/02/15 16:26:23 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int32_t	victory(mlx_t mlx, t_maps *map)
 	system("killall paplay");
 	system("paplay music/win.wav &");
 	map->finish = 0;
+	map->is_anime = 0;
 	texture_a = mlx_load_png("tile_so_long/win.png");
 	img_a = mlx_texture_to_image(&mlx, texture_a);
 	mlx_delete_image(map->mlx, map->img.base);
@@ -44,6 +45,7 @@ int32_t	death(t_maps *map)
 	system("killall paplay");
 	system("paplay music/end.wav &");
 	map->finish = 0;
+	map->is_anime = 0;
 	texture_a = mlx_load_png("tile_so_long/dead.png");
 	img_a = mlx_texture_to_image(map->mlx, texture_a);
 	mlx_delete_image(map->mlx, map->img.base);

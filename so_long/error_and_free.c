@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 14:43:29 by trebours          #+#    #+#             */
-/*   Updated: 2024/02/07 13:59:31 by trebours         ###   ########.fr       */
+/*   Updated: 2024/02/15 16:51:18 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_free_map(char **map)
 	int	i;
 
 	i = 0;
-	while (map[i])
+	while (map && map[i])
 	{
 		free(map[i]);
 		i++;
@@ -34,7 +34,7 @@ void	ft_free_map(char **map)
 void	ft_error(t_maps *parsing, char *error)
 {
 	ft_printf("Error\n%s\n", error);
-	if (parsing->map)
+	if (parsing && parsing->map)
 		ft_free_map(parsing->map);
 	exit(1);
 }
