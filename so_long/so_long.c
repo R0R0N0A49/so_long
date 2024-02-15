@@ -25,19 +25,17 @@ void	key_press(mlx_key_data_t keydata, void *param)
 		mlx_close_window(map->mlx);
 	}
 	if ((mlx_is_key_down(map->mlx, MLX_KEY_W)
-			|| mlx_is_key_down(map->mlx, MLX_KEY_UP)) && map->finish && map->is_moving)
+			|| mlx_is_key_down(map->mlx, MLX_KEY_UP)) && map->finish)
 		high(map);
 	if ((mlx_is_key_down(map->mlx, MLX_KEY_S)
-			|| mlx_is_key_down(map->mlx, MLX_KEY_DOWN)) && map->finish && map->is_moving)
+			|| mlx_is_key_down(map->mlx, MLX_KEY_DOWN)) && map->finish)
 		botom(map);
 	if ((mlx_is_key_down(map->mlx, MLX_KEY_D)
-			|| mlx_is_key_down(map->mlx, MLX_KEY_RIGHT)) && map->finish && map->is_moving)
+			|| mlx_is_key_down(map->mlx, MLX_KEY_RIGHT)) && map->finish)
 		right(map);
 	if ((mlx_is_key_down(map->mlx, MLX_KEY_A)
-			|| mlx_is_key_down(map->mlx, MLX_KEY_LEFT)) && map->finish && map->is_moving)
+			|| mlx_is_key_down(map->mlx, MLX_KEY_LEFT)) && map->finish)
 		left(map);
-	if (mlx_is_key_down(map->mlx, MLX_KEY_C) && map->finish)
-		victory(*map->mlx, map);
 }
 
 void	init_struct(t_maps *map)
@@ -103,7 +101,6 @@ int32_t	so_long(t_maps *map, int size)
 	ft_printf("Colectible = %d\n", map->nmb_obj);
 	system("paplay music/pac_man.wav &");
 	map->size = size;
-	map->is_moving = 1;
 	map->is_anime = 0;
 	map->title = NULL;
 	map->save_nmb_obj = map->nmb_obj;
