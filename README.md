@@ -1,5 +1,6 @@
 # Projet so_long
 
+# Installation :
 **pour le telecharger :**
 
 	git clone https://github.com/R0R0N0A49/so_long.git
@@ -9,7 +10,6 @@
   - mettre le dossier music dans le dossier so_long.
 
 **pour le lancer :**
-
 (ouvrir un terminal dans le dossier so_long)
 
 (ramplacer "nom_de_map" par une map presente dans le dossier map)
