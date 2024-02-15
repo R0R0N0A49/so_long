@@ -31,8 +31,9 @@
 
 ## les touche :
 
+| Aligné à gauche  | Centré          | Aligné à droite |
 | :--------------- |:---------------:| -----:|
-| droite  |   D        |  Fleche droite |
+| Aligné à gauche  |   ce texte        |  Aligné à droite |
 | Aligné à gauche  | est             |   Aligné à droite |
 | Aligné à gauche  | centré          |    Aligné à droite |
 
