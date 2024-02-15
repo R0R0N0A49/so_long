@@ -9,6 +9,7 @@
 
 # pour le lancer :
 (ouvrir un terminal dans le dossier so_long)
+
 (ramplacer "nom_de_map" par une map presente dans le dossier map)
 
 pour le tout premier lancement :
