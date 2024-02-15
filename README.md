@@ -8,7 +8,8 @@
   - https://drive.google.com/drive/folders/1qOMKi_4CQb3IF_HhrlMU_n8KQNKTZBOF?usp=drive_link
   - mettre le dossier music dans le dossier so_long.
 
-# pour le lancer :
+**pour le lancer :**
+
 (ouvrir un terminal dans le dossier so_long)
 
 (ramplacer "nom_de_map" par une map presente dans le dossier map)
