@@ -9,11 +9,15 @@
 
 # pour le lancer :
 (ouvrir un terminal dans le dossier so_long)
-en premier :
+(ramplacer "nom_de_map" par une map presente dans le dossier map)
+
+pour le tout premier lancement :
  
-	make first
-	make
-	./so_long map/< nom_de_map.ber >
+	make first && make && ./so_long map/< nom_de_map >
+
+pour les autre fois :
+
+	./so_long map/< nom_de_map >
 
 # les touche :
   - droit : D ou fleche droite
