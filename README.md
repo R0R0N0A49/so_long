@@ -6,7 +6,7 @@ realiser a 42_Angouleme
  et prendre les musique dans :
  
   - https://drive.google.com/drive/folders/1qOMKi_4CQb3IF_HhrlMU_n8KQNKTZBOF?usp=drive_link
-  - puis mettre le dossier music dans le dossier so_long.
+  - mettre le dossier music dans le dossier so_long.
 
 # pour le lancer :
 	(ouvrir un terminal dans le dossier so_long)
