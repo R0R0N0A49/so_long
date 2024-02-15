@@ -8,9 +8,12 @@
   - mettre le dossier music dans le dossier so_long.
 
 # pour le lancer :
-	(ouvrir un terminal dans le dossier so_long)
+(ouvrir un terminal dans le dossier so_long)
+ 
 	make first
+ 
 	make
+ 
 	./so_long map/< nom_de_map.ber >
 
 # les touche :
