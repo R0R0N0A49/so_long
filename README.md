@@ -31,7 +31,7 @@
 
 ## les touche :
 
-| Aligné à gauche  | Centré          | Aligné à droite |
+| Action  | touche_1          | touche_2 |
 | :--------------- |:---------------:| -----:|
 | Aligné à gauche  |   ce texte        |  Aligné à droite |
 | Aligné à gauche  | est             |   Aligné à droite |
