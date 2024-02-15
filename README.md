@@ -14,6 +14,13 @@ realiser a 42_Angouleme
 	make
 	./so_long map/< nom_de_map.ber >
 
+# les touche :
+  - droit : D ou fleche droite
+  - gauche : A ou fleche gauche
+  - bas : S ou fleche bas
+  - haut : W ou fleche haut
+  - fermer la fenetre : Q ou ESQ
+
 # pour cree une map :
  - cree un fichier ".ber" dans le dossier "map"
  - cree une map avec les critere suivant :
