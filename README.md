@@ -3,7 +3,7 @@
 
 
 ## Installation :
-   #### pour le telecharger :
+   ### pour le telecharger :
 
 	git clone https://github.com/R0R0N0A49/so_long.git
    #### et prendre les musique dans :
@@ -11,7 +11,7 @@
    - https://drive.google.com/drive/folders/1qOMKi_4CQb3IF_HhrlMU_n8KQNKTZBOF?usp=drive_link
    - mettre le dossier music dans le dossier so_long.
 
-   #### pour le lancer :
+   ### pour le lancer :
 
    > (ouvrir un terminal dans le dossier so_long)
 > 
@@ -29,17 +29,17 @@
 
 	./so_long map/< nom_de_map >
 
-# les touche :
+## les touche :
 
 
   - droit : D ou fleche droite
   - gauche : A ou fleche gauche
   - bas : S ou fleche bas
   - haut : W ou fleche haut
-  - fermer la fenetre : Q ou ESQ
+  - fermer la fenetre : Q ou ESC
 
 
-# pour creer une map :
+## pour creer une map :
 
 
  - cree un fichier ".ber" dans le dossier "map"
