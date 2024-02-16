@@ -1,6 +1,7 @@
 NAME = so_long
-SRCS = main.c so_long.c parsing.c parsing_2.c init_tabs_map.c choice_char.c error_and_free.c destroy_img_tex.c dead_and_win.c\
-		load_txt_img.c moving.c display_map.c ghost.c nmb_move.c nmb_obj_collct.c
+SRCS = main.c so_long.c parsing.c parsing_2.c init_tabs_map.c choice_char.c error_and_free.c\
+		destroy_img_tex.c dead_and_win.c load_txt_img.c moving.c display_map.c ghost.c\
+		nmb_move.c nmb_obj_collct.c
 OBJS=$(SRCS:.c=.o)
 RM=rm -rf
 CC= clang
@@ -16,6 +17,11 @@ all: libmlx $(NAME)
 libmlx:
 	@cmake ./MLX42 -B ./MLX42/build 
 	@make -C ./MLX42/build --no-print-directory -j4
+windows :
+	@cl $(SRCS) ./windows/libft.a ./windows/libmlx42.a -o $@
+	@if [ $$? -eq 0 ]; then \
+		echo ${GREEN}"Compilation successful!"${GREEN}; \
+	fi
 $(NAME) : $(OBJS)
 	@make --directory ./libft 
 	@make --directory ./MLX42/build
