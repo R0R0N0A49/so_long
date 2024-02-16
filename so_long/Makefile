@@ -20,7 +20,7 @@ libmlx:
 windows :
 	@cl $(SRCS) ./windows/libft.a ./windows/libmlx42.a -o $@
 	@if [ $$? -eq 0 ]; then \
-		echo ${GREEN}"Compilation successful!"${GREEN}; \
+		echo ${GREEN}"Compilation successful!"${WHITE}; \
 	fi
 $(NAME) : $(OBJS)
 	@make --directory ./libft 
@@ -28,7 +28,7 @@ $(NAME) : $(OBJS)
 	@clear
 	@$(CC) $(CFLAGS) $(OBJS) $(MLXFLAGS) ./libft/libft.a ./MLX42/build/libmlx42.a -o $@
 	@if [ $$? -eq 0 ]; then \
-		echo ${GREEN}"Compilation successful!"${GREEN}; \
+		echo ${GREEN}"Compilation successful!"${WHITE}; \
 	fi
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@ 
