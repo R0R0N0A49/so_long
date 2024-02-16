@@ -60,7 +60,7 @@
    - il doit y avoir SEULEMENT 1 position de depart et 1 sortie
    - il doit y avoir aux moin 1 objet a colecter
 
-[img]
+![img](/asset/img_Readme.jpg)
 
 
 ## realise a 42_Angouleme
