@@ -21,13 +21,13 @@
    #### Pour le tout premier lancement :
 
  
-	make first && make && ./so_long map/< nom_de_map >
+	make first && make && ./so_long map/"nom_de_map"
 
 
    #### Pour les autres fois :
 
 
-	./so_long map/< nom_de_map >
+	./so_long map/"nom_de_map"
 
 ## les touches :
 
