@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 14:00:51 by trebours          #+#    #+#             */
-/*   Updated: 2024/02/16 10:27:33 by trebours         ###   ########.fr       */
+/*   Updated: 2024/02/16 12:04:23 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,18 @@ void	display_last_line(t_maps *map)
 
 void	init_tex_number(t_texture *texture)
 {
-		texture->_0 = mlx_load_png("number/0.png");
-		texture->_1 = mlx_load_png("number/1.png");
-		texture->_2 = mlx_load_png("number/2.png");
-		texture->_3 = mlx_load_png("number/3.png");
-		texture->_4 = mlx_load_png("number/4.png");
-		texture->_5 = mlx_load_png("number/5.png");
-		texture->_6 = mlx_load_png("number/6.png");
-		texture->_7 = mlx_load_png("number/7.png");
-		texture->_8 = mlx_load_png("number/8.png");
-		texture->_9 = mlx_load_png("number/9.png");
-		texture->banana = mlx_load_png("number/banana.png");
-		texture->slash = mlx_load_png("number/slash.png");
+	texture->_0 = mlx_load_png("number/0.png");
+	texture->_1 = mlx_load_png("number/1.png");
+	texture->_2 = mlx_load_png("number/2.png");
+	texture->_3 = mlx_load_png("number/3.png");
+	texture->_4 = mlx_load_png("number/4.png");
+	texture->_5 = mlx_load_png("number/5.png");
+	texture->_6 = mlx_load_png("number/6.png");
+	texture->_7 = mlx_load_png("number/7.png");
+	texture->_8 = mlx_load_png("number/8.png");
+	texture->_9 = mlx_load_png("number/9.png");
+	texture->banana = mlx_load_png("number/banana.png");
+	texture->slash = mlx_load_png("number/slash.png");
 }
 
 void	init_number(t_image *image, t_texture *texture, int secu)
