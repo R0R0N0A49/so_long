@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 15:39:41 by trebours          #+#    #+#             */
-/*   Updated: 2024/02/14 13:53:14 by trebours         ###   ########.fr       */
+/*   Updated: 2024/02/16 11:12:12 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,23 +71,24 @@ void	loop_so_long(t_maps *map, int size)
 
 void	ft_anim(void *param)
 {
-	t_maps	*map;
+	t_maps		*map;
 	static int	i = 0;
+	static int	j = 0;
 
 	map = param;
-	if (i == 15 && map->is_anime == 1)
-	{
-		mlx_delete_image(map->mlx, map->img.base);
-		mlx_delete_image(map->mlx, map->img.move);
+	if (i == 15 && map->is_anime)
+		j = 1;
+	if (i == 30 && map->is_anime)
+		j = 0;
+	if (map->is_anime)
 		display_mouv(map, map->move);
+	if (j == 1 && map->is_anime)
+	{
 		mlx_image_to_window(map->mlx, map->img.move,
-			 	(map->y * map->size), (map->x * map->size));
+			(map->y * map->size), (map->x * map->size));
 	}
-	if (i == 30 && map->is_anime == 1)
+	else if (j == 0 && map->is_anime)
 	{
-		mlx_delete_image(map->mlx, map->img.base);
-		mlx_delete_image(map->mlx, map->img.move);
-		display_mouv(map, map->move);
 		mlx_image_to_window(map->mlx, map->img.base,
 			(map->y * map->size), (map->x * map->size));
 	}
@@ -98,15 +99,14 @@ void	ft_anim(void *param)
 
 int32_t	so_long(t_maps *map, int size)
 {
-	ft_printf("Colectible = %d\n", map->nmb_obj);
 	system("paplay music/pac_man.wav &");
 	map->size = size;
 	map->is_anime = 0;
 	map->title = NULL;
 	map->save_nmb_obj = map->nmb_obj;
 	init_struct(map);
-	display_obj(map);
 	mlx_set_icon(map->mlx, map->tex.logo);
+	mlx_set_window_title(map->mlx, "Puck man");
 	display_last_line(map);
 	display_number(map);
 	loop_so_long(map, size);
@@ -116,37 +116,11 @@ int32_t	so_long(t_maps *map, int size)
 	mlx_loop(map->mlx);
 	destroy_img(map);
 	free(map->title);
-	free(map->ghost_x);
-	free(map->ghost_y);
+	if (map->ghost_x)
+	{
+		free(map->ghost_x);
+		free(map->ghost_y);
+	}
 	mlx_terminate(map->mlx);
 	return (EXIT_SUCCESS);
-}
-
-int	main(int argc, char **argv)
-{
-	t_maps	parsing;
-
-	if (argc != 2)
-	{
-		ft_printf("Error\nBad imput\n");
-		exit(1);
-	}
-	ft_verif_ber(argv[1]);
-	parsing.file_maps = argv[1];
-	parsing.nmb_ghost = 0;
-	if (init_map(&parsing, 0))
-		ft_error(&parsing, "Error map");
-	verif_len(&parsing);
-	verif_quote(&parsing);
-	verif_char(&parsing);
-	ft_is_finished(&parsing);
-	final_map(&parsing);
-	srand(time(NULL));
-	parsing.finish = 1;
-	if (parsing.len_line_map - 2 > 30 || parsing.len_map > 14)
-		so_long(&parsing, 32);
-	else
-		so_long(&parsing, 64);
-	ft_free_map(parsing.map);
-	return (0);
 }

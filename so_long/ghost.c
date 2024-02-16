@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 11:13:46 by trebours          #+#    #+#             */
-/*   Updated: 2024/02/08 11:00:06 by trebours         ###   ########.fr       */
+/*   Updated: 2024/02/16 11:14:40 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	ft_ghost_move(void *param)
 
 	map = param;
 	i = 0;
-	while (i < map->nmb_ghost)
+	while (i < map->nmb_ghost - 1)
 	{
 		random_direction = rand() % 2;
 		map->map[map->ghost_x[i]][map->ghost_y[i]] = '0';

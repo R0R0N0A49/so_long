@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 14:30:39 by trebours          #+#    #+#             */
-/*   Updated: 2024/02/14 13:16:14 by trebours         ###   ########.fr       */
+/*   Updated: 2024/02/16 11:01:19 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,34 +87,17 @@ void	display_o_3(char c, t_maps *map, int *i, int size)
 
 void	display_mouv(t_maps *map, int mouv)
 {
+	mlx_delete_image(map->mlx, map->img.base);
+	mlx_delete_image(map->mlx, map->img.move);
 	if (mouv == 1)
-	{
-		map->img.base = mlx_texture_to_image(map->mlx, map->tex.texture_base);
 		map->img.move = mlx_texture_to_image(map->mlx, map->tex.texture_left);
-		// mlx_image_to_window(map->mlx, map->img.left,
-			// (map->y * map->size), (map->x * map->size));
-	}
 	if (mouv == 2)
-	{
-		map->img.base = mlx_texture_to_image(map->mlx, map->tex.texture_base);
 		map->img.move = mlx_texture_to_image(map->mlx, map->tex.texture_right);
-		// mlx_image_to_window(map->mlx, map->img.right,
-			// (map->y * map->size), (map->x * map->size));
-	}
 	if (mouv == 3)
-	{
-		map->img.base = mlx_texture_to_image(map->mlx, map->tex.texture_base);
 		map->img.move = mlx_texture_to_image(map->mlx, map->tex.texture_botom);
-		// mlx_image_to_window(map->mlx, map->img.botom,
-			// (map->y * map->size), (map->x * map->size));
-	}
 	if (mouv == 4)
-	{
-		map->img.base = mlx_texture_to_image(map->mlx, map->tex.texture_base);
 		map->img.move = mlx_texture_to_image(map->mlx, map->tex.texture_high);
-		// mlx_image_to_window(map->mlx, map->img.high,
-			// (map->y * map->size), (map->x * map->size));
-	}
+	map->img.base = mlx_texture_to_image(map->mlx, map->tex.texture_base);
 }
 
 void	display_ghost(t_maps *map)

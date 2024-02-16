@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 14:26:32 by trebours          #+#    #+#             */
-/*   Updated: 2024/02/14 13:52:26 by trebours         ###   ########.fr       */
+/*   Updated: 2024/02/16 10:28:15 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,10 @@ static void	moving(t_maps *map, int i, int mouv)
 	map->nmb_move++;
 	display_number(map);
 	map->is_anime = 1;
-	map->is_moving = 1;
 }
 
 void	left(t_maps *map)
 {
-	map->is_moving = 0;
 	if (map->map[map->x][map->y] != 'E')
 		map->map[map->x][map->y] = '0';
 	if ((map->map[map->x][map->y - 1] == '0'
@@ -53,7 +51,6 @@ void	left(t_maps *map)
 	{
 		map->y -= 1;
 		moving(map, 1, 1);
-		ft_printf("Colectible = %d\n", map->nmb_obj);
 	}
 	else if (map->map[map->x][map->y - 1] == 'F')
 		death(map);
@@ -61,7 +58,6 @@ void	left(t_maps *map)
 
 void	right(t_maps *map)
 {
-	map->is_moving = 0;
 	if (map->map[map->x][map->y] != 'E')
 		map->map[map->x][map->y] = '0';
 	if ((map->map[map->x][map->y + 1] == '0'
@@ -81,7 +77,6 @@ void	right(t_maps *map)
 	{
 		map->y += 1;
 		moving(map, 1, 2);
-		ft_printf("Colectible = %d\n", map->nmb_obj);
 	}
 	else if (map->map[map->x][map->y + 1] == 'F')
 		death(map);
@@ -89,7 +84,6 @@ void	right(t_maps *map)
 
 void	botom(t_maps *map)
 {
-	map->is_moving = 0;
 	if (map->map[map->x][map->y] != 'E')
 		map->map[map->x][map->y] = '0';
 	if ((map->map[map->x + 1][map->y] == '0'
@@ -109,7 +103,6 @@ void	botom(t_maps *map)
 	{
 		map->x += 1;
 		moving(map, 1, 3);
-		ft_printf("Colectible = %d\n", map->nmb_obj);
 	}
 	else if (map->map[map->x + 1][map->y] == 'F')
 		death(map);
@@ -117,7 +110,6 @@ void	botom(t_maps *map)
 
 void	high(t_maps *map)
 {
-	map->is_moving = 0;
 	if (map->map[map->x][map->y] != 'E')
 		map->map[map->x][map->y] = '0';
 	if ((map->map[map->x - 1][map->y] == '0'
@@ -137,7 +129,6 @@ void	high(t_maps *map)
 	{
 		map->x -= 1;
 		moving(map, 1, 4);
-		ft_printf("Colectible = %d\n", map->nmb_obj);
 	}
 	else if (map->map[map->x - 1][map->y] == 'F')
 		death(map);

@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:23:54 by trebours          #+#    #+#             */
-/*   Updated: 2024/02/15 17:53:24 by trebours         ###   ########.fr       */
+/*   Updated: 2024/02/16 09:47:29 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	main(int argc, char **argv)
 	ft_verif_ber(argv[1]);
 	parsing.file_maps = argv[1];
 	parsing.nmb_ghost = 0;
+	parsing.ghost_x = NULL;
+	parsing.ghost_y = NULL;
 	if (init_map(&parsing, 0))
 		ft_error(&parsing, "Error map");
 	verif_len(&parsing);
@@ -30,8 +32,6 @@ int	main(int argc, char **argv)
 	final_map(&parsing);
 	srand(time(NULL));
 	parsing.finish = 1;
-	parsing.ghost_x = NULL;
-	parsing.ghost_y = NULL;
 	if (parsing.len_line_map - 2 > 30 || parsing.len_map > 14)
 		so_long(&parsing, 32);
 	else

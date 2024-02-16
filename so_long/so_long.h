@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 09:17:33 by trebours          #+#    #+#             */
-/*   Updated: 2024/02/15 16:25:06 by trebours         ###   ########.fr       */
+/*   Updated: 2024/02/16 10:19:22 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ typedef struct s_texture
 	mlx_texture_t	*_7;
 	mlx_texture_t	*_8;
 	mlx_texture_t	*_9;
+	mlx_texture_t	*banana;
+	mlx_texture_t	*slash;
 }t_texture;
 
 typedef struct s_image
@@ -102,6 +104,8 @@ typedef struct s_image
 	mlx_image_t	*_8;
 	mlx_image_t	*_9;
 	mlx_image_t	*move;
+	mlx_image_t	*banana;
+	mlx_image_t	*slash;
 }t_image;
 
 typedef struct s_maps
@@ -117,6 +121,7 @@ typedef struct s_maps
 	int			len_map;
 	int			nmb_obj;
 	int			save_nmb_obj;
+	int			pos_slash;
 	int			nmb_move;
 	int			x;
 	int			y;
@@ -159,6 +164,7 @@ void	display_mouv(t_maps *map, int mouv);
 void	ft_error(t_maps *parsing, char *error);
 char	*ft_malloc_line(t_maps *parsing, int i);
 void	save_ghost(t_maps *parsing, int x, int y);
+void	display_0_to_9(t_maps *map, int nmb, int y);
 char	choice_char(t_maps *parsing, int i, size_t j);
 void	display_a_l(char c, t_maps *map, int *i, int size);
 void	display_o_3(char c, t_maps *map, int *i, int size);

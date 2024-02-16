@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 16:32:10 by trebours          #+#    #+#             */
-/*   Updated: 2024/02/07 14:16:14 by trebours         ###   ########.fr       */
+/*   Updated: 2024/02/16 09:39:09 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,33 +91,6 @@ void	init_perso(t_image *load, t_texture *text, int size)
 	load->left = mlx_texture_to_image(load->mlx, text->texture_left);
 	load->botom = mlx_texture_to_image(load->mlx, text->texture_botom);
 	load->high = mlx_texture_to_image(load->mlx, text->texture_high);
-}
-
-void	init_number(t_image *image, t_texture *texture, int secu)
-{
-	if (secu)
-	{
-		texture->_0 = mlx_load_png("number/0.png");
-		texture->_1 = mlx_load_png("number/1.png");
-		texture->_2 = mlx_load_png("number/2.png");
-		texture->_3 = mlx_load_png("number/3.png");
-		texture->_4 = mlx_load_png("number/4.png");
-		texture->_5 = mlx_load_png("number/5.png");
-		texture->_6 = mlx_load_png("number/6.png");
-		texture->_7 = mlx_load_png("number/7.png");
-		texture->_8 = mlx_load_png("number/8.png");
-		texture->_9 = mlx_load_png("number/9.png");
-	}
-	image->_0 = mlx_texture_to_image(image->mlx, texture->_0);
-	image->_1 = mlx_texture_to_image(image->mlx, texture->_1);
-	image->_2 = mlx_texture_to_image(image->mlx, texture->_2);
-	image->_3 = mlx_texture_to_image(image->mlx, texture->_3);
-	image->_4 = mlx_texture_to_image(image->mlx, texture->_4);
-	image->_5 = mlx_texture_to_image(image->mlx, texture->_5);
-	image->_6 = mlx_texture_to_image(image->mlx, texture->_6);
-	image->_7 = mlx_texture_to_image(image->mlx, texture->_7);
-	image->_8 = mlx_texture_to_image(image->mlx, texture->_8);
-	image->_9 = mlx_texture_to_image(image->mlx, texture->_9);
 }
 
 void	init_image(t_image *load, t_texture *loaded, int size)

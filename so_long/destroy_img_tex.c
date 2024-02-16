@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 13:57:55 by trebours          #+#    #+#             */
-/*   Updated: 2024/02/07 14:20:53 by trebours         ###   ########.fr       */
+/*   Updated: 2024/02/16 10:14:36 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void	destroy_number(t_maps *map)
 	mlx_delete_image(map->mlx, map->img._7);
 	mlx_delete_image(map->mlx, map->img._8);
 	mlx_delete_image(map->mlx, map->img._9);
+	mlx_delete_image(map->mlx, map->img.banana);
+	mlx_delete_image(map->mlx, map->img.slash);
 }
 
 void	destroy_texture(t_maps *map)
