@@ -3,69 +3,69 @@
 
 
 ## Installation :
-   ### pour le telecharger :
+   ### Puis le télécharger :
 
 	git clone https://github.com/R0R0N0A49/so_long.git
-   #### et prendre les musique dans :
+   #### Et prendre les musiques dans :
  
    - https://drive.google.com/drive/folders/1qOMKi_4CQb3IF_HhrlMU_n8KQNKTZBOF?usp=drive_link
-   - mettre le dossier music dans le dossier so_long.
+   - Mettre le dossier 'music' dans le dossier 'so_long'.
 
-   ### pour le lancer :
+   ### Puis pour le lancer :
 
-   > (ouvrir un terminal dans le dossier so_long)
+   > (Ouvrir un terminal dans le dossier 'so_long')
 > 
-   > (remplacer "nom_de_map" par une map presente dans le dossier map)
+   > (remplacer "nom_de_map" par une carte présente dans le dossier map)
 
 
-   #### pour le tout premier lancement :
+   #### Pour le tout premier lancement. :
 
  
 	make first && make && ./so_long map/< nom_de_map >
 
 
-   #### pour les autre fois :
+   #### Pour les autres fois. :
 
 
 	./so_long map/< nom_de_map >
 
-## les touche :
+## les touches :
 
 | Action  | touche_1 | touche_2       |
 | :-----: |:--------:| :-------------:|
 |         |          |                |
-| Droite  |   D      |  Fleche droite |
-| Gauche  |   A      |  Fleche gauche |
-| Haut    |   W      |  Fleche haute  |
-| Bas     |   S      |  Fleche basse  |
+| Droite  |   D      |  Flèche droite |
+| Gauche  |   A      |  Flèche gauche |
+| Haut    |   W      |  Flèche haute  |
+| Bas     |   S      |  Flèche basse  |
 | Quitter |   Q      |  ESC           |
 
-## pour creer une map :
+## Pour créer une carte. :
 
 
-**- cree un fichier ".ber" dans le dossier "map"**
+**- Crée un fichier ".ber" dans le dossier "map".**
 
-**- cree une map avec les caracteres suivants :**
+**- Crée une carte avec les caractères suivants :**
  
    - 1 est un mur
-   - 0 est un endroit ou le joueur peut ce deplacer
-   - E est la sortie
-   - P est la position de depart du joueur
-   - C est un objet que le joueur doit ramaser
+   - 0 est un endroit où le joueur peut se déplacer.
+   - E est la sortie.
+   - P est la position de départ du joueur.
+   - C est un objet que le joueur doit ramasser.
 
-**- avec les criteres suivants**
+**- Avec les critères suivants.**
  
-   - la map doit etre entourer de mur
-   - il ne doit pas y avoir de ligne plus grande que les autre (si la map est cree sur Visual studio, il doit y avoir un retour a le ligne a la fin)
-   - il doit y avoir SEULEMENT 1 position de depart et 1 sortie
-   - il doit y avoir aux moin 1 objet a colecter
+   - La carte doit être entourée de murs.
+   - Il ne doit pas y avoir de ligne plus grande que les autres. Si la carte est créée sur Visual Studio, il doit y avoir un retour à la ligne à la fin.
+   - Il doit y avoir seulement une position de départ et une sortie.
+   - Il doit y avoir au moins un objet à collecter.
 
 ## affichage :
 
 ![img](/asset/img_Readme.jpg)
 
-**en bas de l'ecran il y a un conteur de mouvement (entourer en bleu)**
+**en bas de l'écran, il y a un compteur de mouvements (entouré en bleu)**
 
-**et un conteur de collectible (entourer en rouge)**
+**et un compteur de collectibles (entouré en rouge)**
 
 ## realise a 42_Angouleme
