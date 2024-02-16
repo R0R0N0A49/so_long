@@ -60,7 +60,12 @@
    - il doit y avoir SEULEMENT 1 position de depart et 1 sortie
    - il doit y avoir aux moin 1 objet a colecter
 
+## affichage :
+
 ![img](/asset/img_Readme.jpg)
 
+**en bas de l'ecran il y a un conteur de mouvement (entourer en bleu)**
+
+**et un conteur de collectible (entourer en rouge)**
 
 ## realise a 42_Angouleme
