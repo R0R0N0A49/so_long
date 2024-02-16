@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 14:00:51 by trebours          #+#    #+#             */
-/*   Updated: 2024/02/16 12:04:23 by trebours         ###   ########.fr       */
+/*   Updated: 2024/02/16 14:37:05 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	init_number(t_image *image, t_texture *texture, int secu)
 	image->slash = mlx_texture_to_image(image->mlx, texture->slash);
 }
 
-void	display_0_to_9(t_maps *map, int nmb, int y)
+static void	display_0_to_9(t_maps *map, int nmb, int y)
 {
 	int	size;
 

@@ -6,7 +6,7 @@
 /*   By: trebours <trebours@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 08:40:39 by trebours          #+#    #+#             */
-/*   Updated: 2024/02/16 11:30:59 by trebours         ###   ########.fr       */
+/*   Updated: 2024/02/16 14:43:48 by trebours         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	init_map(t_maps *parsing, int len)
 
 static char	ghost(void)
 {
-	if ((rand() % 85) < 2)
+	if ((rand() % 100) < 2)
 		return ('F');
 	return ('0');
 }
